@@ -4,6 +4,7 @@
       "id": 1,
       "title": "Woofing those bugs away",
       "postVotes": 26,
+      "topic": "pets",
       "desc": "this be ma dog",
       "user": "mario",
       "image": "https://images.dog.ceo/breeds/sheepdog-shetland/n02105855_17070.jpg"
@@ -12,25 +13,19 @@
       "id": 2,
       "title": "Woofing those bugs away",
       "postVotes": 26,
-      "desc": "this be ma dog",
+      "topic": "pets",
+      "desc": "this is a ma dog",
       "user": "mario",
       "image": "https://images.dog.ceo/breeds/chihuahua/n02085620_3763.jpg"
     },
     {
-      "title": "asfasdf",
+      "title": "Test",
       "postVotes": 0,
-      "desc": "asdfsadf",
+      "topic": "Test",
+      "desc": "Test",
       "user": "mario",
-      "image": "sadfasdf",
+      "image": "https://cdn.britannica.com/51/9351-050-F34A20B8/Ski-jumper-V-position.jpg",
       "id": 3
-    },
-    {
-      "title": "xcbv",
-      "postVotes": 0,
-      "desc": "xcvb",
-      "user": "mario",
-      "image": "xcvb",
-      "id": 4
     }
   ],
   "comments": [
@@ -54,54 +49,22 @@
       "commentVotes": 0,
       "user": "mario",
       "id": 7
-    },
-    {
-      "content": "asdf",
-      "postId": 3,
-      "commentVotes": 0,
-      "user": "mario",
-      "id": 8
-    },
-    {
-      "content": "new comment",
-      "postId": 1,
-      "commentVotes": 0,
-      "user": "mario",
-      "id": 9
-    },
-    {
-      "content": "new comment",
-      "postId": 1,
-      "commentVotes": 0,
-      "user": "mario",
-      "id": 10
-    },
-    {
-      "content": "this one",
-      "postId": 1,
-      "commentVotes": 0,
-      "user": "mario",
-      "id": 11
-    },
-    {
-      "content": "ijoij",
-      "postId": 1,
-      "commentVotes": 0,
-      "user": "mario",
-      "id": 12
-    },
-    {
-      "content": "this is a comment",
-      "postId": 4,
-      "commentVotes": 0,
-      "user": "mario",
-      "id": 13
     }
   ],
   "users": [
     {
+      "id": 1,
       "name": "mario",
       "bio": "it'sa me, Mario",
+      "propic": "https://m.media-amazon.com/images/I/71AYhr9QNcL._AC_UL1500_.jpg",
+      "likedPosts": [],
+      "followedUsers": [],
+      "posts": []
+    },
+    {
+      "id": 2,
+      "name": "Luigi",
+      "bio": "it'sa me, Luigi",
       "propic": "https://m.media-amazon.com/images/I/71AYhr9QNcL._AC_UL1500_.jpg",
       "likedPosts": [],
       "followedUsers": [],

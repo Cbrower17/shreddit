@@ -11,6 +11,12 @@ function App() {
   const [page, setPage] = useState("/")
   const [allPosts, setAllPosts] = useState([])
   const [allComments, setAllComments] = useState([])
+  const [allUsers, setAllUsers] = useState([])
+  const [currentUser, setCurrentUser] = useState([])
+
+  /*current idea,
+  pass down setcurrentuser to the drop down for selction
+  add drop down options like a post-> map through list of users adding their names to array of options*/ 
 
   useEffect(()=>{
     fetch("http://localhost:3000/posts/")
@@ -19,9 +25,16 @@ function App() {
       setAllPosts(posts)
       
     })
+    fetch("http://localhost:3000/users/")
+    .then(r => r.json())
+    .then(users => {
+      
+      setAllUsers(users)
+      setCurrentUser(users[0])
+      
+    })
   },[allComments])
 
-console.log(allPosts)
 function handlePost(postObj){
   fetch("http://localhost:3000/posts/", {
     headers: {
@@ -65,10 +78,11 @@ function handleNewComment(postId, comment){
 
   return (
     <div className="App">
-     <Navbar onChangePage={setPage}/>
+      <h1>currentUser: {currentUser.name}</h1>
+     <Navbar onChangePage={setPage} allUsers={allUsers} setCurrentUser={setCurrentUser} currentUser={currentUser}/>
      
      <Routes>
-                <Route path="/feed" element={<Feed posts= {allPosts} handleNewComment={handleNewComment}/>} />
+                <Route path="/feed" element={<Feed posts= {allPosts} handleNewComment={handleNewComment} user={currentUser}/>} />
                 <Route path="/new-post" element={<Newpost handlePost={handlePost}/>}/>
                     
                 
