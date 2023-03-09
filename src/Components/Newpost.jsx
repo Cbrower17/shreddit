@@ -21,6 +21,7 @@ export default function Newpost({handlePost}){
         setTitle("")
       }
     return (
+      <div className="flex flex-col items-center justify-center space-y-5">
         <div className="card w-96 bg-base-100 shadow-xl">
   <div className="card-body">
     <h2 className="card-title">New Post</h2>
@@ -39,6 +40,7 @@ export default function Newpost({handlePost}){
         </form>
     </div>
   </div>
+</div>
 </div>
         // <div>
         //     <h1>New Post</h1>

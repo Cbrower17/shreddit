@@ -8,7 +8,7 @@ export default function Container({ posts, handleNewComment }) {
   });
 
   return (
-    <div className="ml-48  border-green-234 border-2 w-7/8">
+    <div className="flex flex-col items-center justify-center space-y-5">
       <h1>
         Im a container
         <br />

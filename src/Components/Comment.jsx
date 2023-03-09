@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-export default function Comment({ comment }) {
+export default function Comment({ comment, removeComment }) {
   const [count, setCount] = useState(comment.commentVotes);
   function handleCLickUp() {
     const newCount = count + 1;
@@ -8,23 +8,24 @@ export default function Comment({ comment }) {
   function handleCLickDown() {
     const newCount = count - 1;
     setCount(() => newCount);
+    
   }
   function handleRemove(){
-    console.log('dont look')
+    removeComment(comment.id)
   }
   return (
-    <div className="table-row bg-slate-400 border-2 border-slate-500 w-11/12">
-        <h3 className="">{comment.user}:</h3>
-        <p className="">{comment.content}</p>
-        <p className="">{comment.id}</p>
-        <button className="btn sm w-15 rounded-full" onClick={()=>handleRemove()}>
+    <tr >
+        <td>{comment.user}:</td>
+        <td >{comment.content}</td>
+        <td><button className="btn sm w-15 rounded-full" onClick={()=>handleRemove()}>
           remove
         </button>
-        <div className=" inline-grid w-9">
-            <button className="inline-grid" onClick={()=>handleCLickUp()}>⬆</button>
+        </td>
+        <td className= "">
+            <button className="inline-grid" onClick={()=>handleCLickUp()}><img src="../assets/up.png"/></button>
             <p className="inline-grid">{count}</p>
-            <button className="inline-grid" onClick={()=>handleCLickDown()}>⬇</button>
-        </div>
-    </div>
+            <button className="inline-grid" onClick={()=>handleCLickDown()}></button>
+        </td>
+    </tr>
   );
 }
