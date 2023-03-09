@@ -12,9 +12,9 @@ export default function Post({ post, handleNewComment }) {
           {post.title}
           <div className="justify-end">
             <h5>
-              <button className="btn btn-outline btn-success">⬆</button>
+              <button className="btn btn-outline btn-success"><img src="./src/assets/up.png" className="w-4"/></button>
               {post.postVotes}
-              <button className="btn btn-outline btn-error"></button>
+              <button className="btn btn-outline btn-error"><img src="./src/assets/down.png" className="w-4"/></button>
             </h5>
           </div>
         </h2>

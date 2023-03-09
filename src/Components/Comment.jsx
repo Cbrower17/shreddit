@@ -22,9 +22,9 @@ export default function Comment({ comment, removeComment }) {
         </button>
         </td>
         <td className= "">
-            <button className="inline-grid" onClick={()=>handleCLickUp()}><img src="../assets/up.png"/></button>
+            <button className="inline-grid" onClick={()=>handleCLickUp()}><img src="./src/assets/up.png" className="w-4"/></button>
             <p className="inline-grid">{count}</p>
-            <button className="inline-grid" onClick={()=>handleCLickDown()}></button>
+            <button className="inline-grid" onClick={()=>handleCLickDown()}><img src="./src/assets/down.png" className="w-4"/></button>
         </td>
     </tr>
   );
