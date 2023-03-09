@@ -6,7 +6,7 @@
       "postVotes": 26,
       "topic": "pets",
       "desc": "this be ma dog",
-      "user": "mario",
+      "user": 1,
       "image": "https://images.dog.ceo/breeds/sheepdog-shetland/n02105855_17070.jpg"
     },
     {
@@ -15,7 +15,7 @@
       "postVotes": 26,
       "topic": "pets",
       "desc": "this is a ma dog",
-      "user": "mario",
+      "user": 1,
       "image": "https://images.dog.ceo/breeds/chihuahua/n02085620_3763.jpg"
     },
     {
@@ -23,7 +23,7 @@
       "postVotes": 0,
       "topic": "Test",
       "desc": "Test",
-      "user": "mario",
+      "user": 1,
       "image": "https://cdn.britannica.com/51/9351-050-F34A20B8/Ski-jumper-V-position.jpg",
       "id": 3
     },
@@ -32,9 +32,27 @@
       "postVotes": 0,
       "topic": "post",
       "desc": "post",
-      "user": "mario",
+      "user": 1,
       "image": "https://media.tenor.com/SSY2V0RrU3IAAAAd/rick-roll-rick-rolled.gif",
       "id": 4
+    },
+    {
+      "title": "Hello ",
+      "postVotes": 0,
+      "topic": "Test post for luigi",
+      "desc": "i really hope that this works",
+      "user": 2,
+      "image": "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWZkZTMzOWI3MGQ2ZjIxNjgwZDE4NzYxNWMyZjc3YTNiYjE5M2RkNyZjdD1z/iIGA9qQ8CaJLLmi0Bh/giphy.gif",
+      "id": 5
+    },
+    {
+      "title": "Salads first post",
+      "postVotes": 0,
+      "topic": "Spoons",
+      "desc": "Rusty?",
+      "user": 4,
+      "image": "https://media.tenor.com/6QRLKh0iM1wAAAAC/spoons-salad-fingers.gif",
+      "id": 6
     }
   ],
   "comments": [
@@ -42,7 +60,7 @@
       "id": 2,
       "postId": 1,
       "commentVotes": 0,
-      "user": "mario",
+      "user": 1,
       "content": "He's got a nose for bugs!"
     },
     {
@@ -56,46 +74,84 @@
       "content": "WOOF there it is!",
       "postId": 1,
       "commentVotes": 0,
-      "user": "mario",
+      "user": 1,
       "id": 7
     },
     {
       "content": "test coomment",
       "postId": 1,
       "commentVotes": 0,
-      "user": "mario",
+      "user": 1,
       "id": 8
     },
     {
       "content": "hola",
       "postId": 2,
       "commentVotes": 0,
-      "user": "mario",
+      "user": 1,
       "id": 9
     },
     {
       "content": "hello",
       "postId": 1,
       "commentVotes": 0,
-      "user": "mario",
+      "user": 1,
       "id": 10
     },
     {
       "content": "hello",
       "postId": 1,
       "commentVotes": 0,
-      "user": "Luigi",
+      "user": 1,
       "id": 11
+    },
+    {
+      "content": "N",
+      "postId": 5,
+      "commentVotes": 0,
+      "user": "Mario",
+      "id": 12
+    },
+    {
+      "content": "NICE MOVES!",
+      "postId": 5,
+      "commentVotes": 0,
+      "user": "Mario",
+      "id": 13
+    },
+    {
+      "content": "Hey it's greg",
+      "postId": 5,
+      "commentVotes": 0,
+      "user": "Greg",
+      "id": 14
+    },
+    {
+      "content": "hello",
+      "postId": 1,
+      "commentVotes": 0,
+      "user": "Mario",
+      "id": 15
+    },
+    {
+      "content": "iuhiuh",
+      "postId": 1,
+      "commentVotes": 0,
+      "user": "Greg",
+      "id": 16
     }
   ],
   "users": [
     {
       "id": 1,
-      "name": "mario",
+      "name": "Mario",
       "bio": "it'sa me, Mario",
       "propic": "https://m.media-amazon.com/images/I/71AYhr9QNcL._AC_UL1500_.jpg",
       "likedPosts": [],
-      "followedUsers": [],
+      "followedUsers": [
+        2,
+        3
+      ],
       "posts": []
     },
     {
@@ -104,7 +160,33 @@
       "bio": "it'sa me, Luigi",
       "propic": "data:image/jpeg;base64,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",
       "likedPosts": [],
-      "followedUsers": [],
+      "followedUsers": [
+        3
+      ],
+      "posts": []
+    },
+    {
+      "id": 3,
+      "name": "Greg",
+      "bio": "Greg greg GrGEg greeg GREEEGGGGG! \nhey its ya boi!",
+      "propic": "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Greg_Heffley.svg/1200px-Greg_Heffley.svg.png",
+      "likedPosts": [],
+      "followedUsers": [
+        1,
+        2
+      ],
+      "posts": []
+    },
+    {
+      "id": 4,
+      "name": "Salad Fingers",
+      "bio": "Parker's ArtProfile",
+      "propic": "src/assets/IMG_0046.jpg",
+      "likedPosts": [],
+      "followedUsers": [
+        1,
+        2
+      ],
       "posts": []
     }
   ]

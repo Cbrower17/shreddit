@@ -1,7 +1,7 @@
 import Container from "./Container"
-export default function Feed({posts,handleNewComment,user}){
+export default function Feed({posts,handleNewComment,users, allPosts,setFilter}) {
 
     return <div>i a feed
-        <Container posts = {posts} handleNewComment={handleNewComment}/>
+        <Container setFilter ={setFilter} allPosts={allPosts} posts = {posts} handleNewComment={handleNewComment} users={users} />
     </div>
 }

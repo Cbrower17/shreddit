@@ -1,13 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import SearchBar from "./SearchBar.jsx"
 
-function NavBar({ allUsers, changeUser, currentUser }) {
+function NavBar({ allUsers, changeUser, currentUser,setCurrentSearch }) {
   console.log(allUsers);
   const userOptions = allUsers.map((user) => {
-    const strungout = JSON.stringify(user)
+    const strungout = JSON.stringify(user);
     console.log(JSON.parse(strungout));
     console.log(user);
-    console.log(JSON.stringify(user))
+    console.log(JSON.stringify(user));
     return (
       <li>
         <a
@@ -68,23 +69,8 @@ function NavBar({ allUsers, changeUser, currentUser }) {
         <a className="btn btn-ghost normal-case text-xl">Shreddit</a>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-ghost btn-circle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-        </button>
-        <button className="btn btn-ghost btn-circle">
+       <SearchBar setCurrentSearch={setCurrentSearch}/>
+        {/* <button className="btn btn-ghost btn-circle">
           <div className="indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -102,12 +88,15 @@ function NavBar({ allUsers, changeUser, currentUser }) {
             </svg>
             <span className="badge badge-xs badge-primary indicator-item border-2"></span>
           </div>
-        </button>
+        </button> */}
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost rounded-btn">
             <div className="avatar">
-              <div className="w-12 rounded-full">
-                <img src={currentUser.propic} className="max-w-fit" />
+              <div className="w-12 rounded-full flex flex-col items-center justify-center ">
+                <img
+                  src={currentUser.propic}
+                  className="min-w-full max-w-fit overflow-hidden"
+                />
               </div>
             </div>
           </label>

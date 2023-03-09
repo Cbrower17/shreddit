@@ -1,9 +1,10 @@
 import Post from "./Post";
+import FilterBox from "./FilterBox";
 
-export default function Container({ posts, handleNewComment }) {
+export default function Container({allPosts, posts, handleNewComment,users,setFilter }) {
   const shownPosts = posts.map((post) => {
     return (
-      <Post handleNewComment={handleNewComment} key={post.id} post={post} />
+      <Post handleNewComment={handleNewComment} key={post.id} post={post} users={users} />
     );
   });
 
@@ -13,6 +14,7 @@ export default function Container({ posts, handleNewComment }) {
         Im a container
         <br />
         add sorting options up here
+        <FilterBox allPosts ={allPosts} setFilter={setFilter}/>
       </h1>
       {shownPosts}
     </div>

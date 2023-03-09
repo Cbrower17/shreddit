@@ -5,6 +5,7 @@ export default function NewComment({postId, handleNewComment}) {
     e.preventDefault();
     console.log(commentText);
     handleNewComment(postId, commentText)
+    setCommentText("")
     
   }
 

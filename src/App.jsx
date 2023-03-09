@@ -14,6 +14,8 @@ function App() {
   const [allComments, setAllComments] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
+  const [search, setSearch] = useState("");
+  const [filter,setFilter] = useState("all")
 
   /*current idea,
   pass down setcurrentuser to the drop down for selction
@@ -33,8 +35,8 @@ function App() {
       });
   }, [allComments]);
 
-  function changeUser(user){
-    setCurrentUser(user)
+  function changeUser(user) {
+    setCurrentUser(user);
   }
 
   //POST functions
@@ -82,10 +84,34 @@ function App() {
   function deleteComment(id) {
     fetch(`http://localhost:3000/comments/${id}`, {
       method: "DELETE",
-    })
-    const newComments = allComments.filter(comment => comment.id !== id)
-    setAllComments(newComments)
+    });
+    const newComments = allComments.filter((comment) => comment.id !== id);
+    setAllComments(newComments);
   }
+
+  function setCurrentSearch(searchTerm) {
+    console.log(searchTerm);
+    setSearch(searchTerm.toLowerCase());
+  }
+
+  function setCurrentFilter(filter) {
+    setFilter(filter)
+  }
+
+  
+  const shownPosts = allPosts.filter((post) => {
+    if(filter!=="all"){
+    return (post.topic === filter && (
+      post.title.toLowerCase().includes(search) ||
+      post.desc.toLowerCase().includes(search))
+    );
+    }else{
+      return ( 
+      post.title.toLowerCase().includes(search) ||
+      post.desc.toLowerCase().includes(search)
+    );}
+  });
+  console.log(shownPosts);
 
   return (
     <div className="App">
@@ -95,6 +121,7 @@ function App() {
         allUsers={allUsers}
         changeUser={changeUser}
         currentUser={currentUser}
+        setCurrentSearch={setCurrentSearch}
       />
 
       <Routes>
@@ -102,19 +129,36 @@ function App() {
           path="/feed"
           element={
             <Feed
-              posts={allPosts}
+              allPosts={allPosts}
+              posts={shownPosts}
               handleNewComment={handleNewComment}
               user={currentUser}
+              users={allUsers}
+              setFilter={setFilter}
             />
           }
         />
-        <Route path="/new-post" element={<Newpost handlePost={handlePost} />} />
-        <Route path="/account" element={<Account currentUser={currentUser} />} />
+        <Route
+          path="/new-post"
+          element={
+            <Newpost handlePost={handlePost} currentUser={currentUser} />
+          }
+        />
+        <Route
+          path="/account"
+          element={<Account currentUser={currentUser} />}
+        />
 
         <Route
           path="/"
           element={
-            <Allpost posts={allPosts} handleNewComment={handleNewComment} />
+            <Allpost
+              allPosts={allPosts}
+              posts={shownPosts}
+              handleNewComment={handleNewComment}
+              users={allUsers}
+              setFilter={setFilter}
+            />
           }
         />
 
@@ -122,6 +166,11 @@ function App() {
 
         <Route path="*" element={<h1>404 not found</h1>} />
       </Routes>
+      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+        <div>
+          <p>Copyright © 2023 - All right reserved by ME Industries Ltd</p>
+        </div>
+      </footer>
     </div>
   );
 }

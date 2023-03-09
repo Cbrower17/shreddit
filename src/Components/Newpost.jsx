@@ -1,9 +1,11 @@
 import {useState} from 'react'
-export default function Newpost({handlePost}){
+import { useNavigate } from 'react-router-dom'
+export default function Newpost({handlePost,currentUser}){
     const [title,setTitle] = useState('')
     const [topic,setTopic] = useState('')
     const [desc,setDesc] = useState('')
     const [img,setImage] = useState('')
+    const navigate = useNavigate()
     function handleSubmit(e) {
         e.preventDefault();
         const newobj = {
@@ -11,7 +13,7 @@ export default function Newpost({handlePost}){
             postVotes: 0,
             topic: topic,
             desc:desc,
-            user: "mario",
+            user: currentUser.id,
             image: img
         }
         handlePost(newobj)
@@ -19,6 +21,7 @@ export default function Newpost({handlePost}){
         setDesc("")
         setImage("")
         setTitle("")
+        navigate("/")
       }
     return (
       <div className="flex flex-col items-center justify-center space-y-5">
