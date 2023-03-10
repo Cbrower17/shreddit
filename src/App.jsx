@@ -87,6 +87,7 @@ function App() {
       method: "DELETE",
     });
     const newComments = allComments.filter((comment) => comment.id !== id);
+    console.log("hello")
     setAllComments(newComments);
   }
 
@@ -95,9 +96,18 @@ function App() {
     setSearch(searchTerm.toLowerCase());
   }
 
-  function setCurrentFilter(filter) {
-    setFilter(filter)
-  }
+  function handlePostVote(count,id){
+  fetch(`http://localhost:3000/posts/${id}`, {
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+    },
+    method: "PATCH",
+    body: JSON.stringify({
+      postVotes: count,
+    })
+  })
+}
 
   
   const shownPosts = allPosts.filter((post) => {
@@ -144,6 +154,8 @@ if(sort === "new"){
               user={currentUser}
               users={allUsers}
               setFilter={setFilter}
+              handlePostVote={handlePostVote}
+              deleteComment={deleteComment}
             />
           }
         />
@@ -162,11 +174,13 @@ if(sort === "new"){
           path="/"
           element={
             <Allpost
+            deleteComment={deleteComment}
             setSort={setSort}
               allPosts={allPosts}
               posts={shownPosts}
               handleNewComment={handleNewComment}
               users={allUsers}
+              handlePostVote={handlePostVote}
               setFilter={setFilter}
             />
           }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-export default function Comment({ comment, removeComment }) {
+export default function Comment({ comment, deleteComment}) {
   const [count, setCount] = useState(comment.commentVotes);
   function handleCLickUp() {
     const newCount = count + 1;
@@ -11,7 +11,8 @@ export default function Comment({ comment, removeComment }) {
     
   }
   function handleRemove(){
-    removeComment(comment.id)
+    deleteComment(comment.id)
+
   }
   return (
     <tr >

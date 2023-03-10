@@ -2,18 +2,19 @@ import Comments from "./Comments.jsx";
 import NewComment from "./NewComment.jsx";
 import React, { useState } from "react";
 
-export default function Post({ users, post, handleNewComment }) {
+export default function Post({ users, post, handleNewComment, handlePostVote,deleteComment}) {
   console.log(users);
   if(users.length===0){return<div>loading</div>}
   const [count, setCount] = useState(post.postVotes);
   function handleCLickUp() {
     const newCount = count + 1;
     setCount(() => newCount);
+    handlePostVote(newCount,post.id);
   }
   function handleCLickDown() {
     const newCount = count - 1;
     setCount(() => newCount);
-    
+    handlePostVote(newCount,post.id);
   }
   const postUser = users.filter(user => user.id === post.user)
   
@@ -62,7 +63,7 @@ export default function Post({ users, post, handleNewComment }) {
             <input type="checkbox" />
             <div className="collapse-title text-xl">Comments</div>
             <div className="collapse-content duration-75">
-              <Comments post={post} />
+              <Comments post={post} deleteComment={deleteComment}/>
             </div>
           </div>
         </div>

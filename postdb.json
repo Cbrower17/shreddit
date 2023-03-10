@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Woofing those bugs away",
-      "postVotes": 26,
+      "postVotes": 27,
       "topic": "pets",
       "desc": "this be ma dog",
       "user": 1,
@@ -12,7 +12,7 @@
     {
       "id": 2,
       "title": "Woofing those bugs away",
-      "postVotes": 26,
+      "postVotes": -1,
       "topic": "pets",
       "desc": "this is a ma dog",
       "user": 1,
@@ -20,7 +20,7 @@
     },
     {
       "title": "Test",
-      "postVotes": 0,
+      "postVotes": 1,
       "topic": "Test",
       "desc": "Test",
       "user": 1,
@@ -29,7 +29,7 @@
     },
     {
       "title": "poty",
-      "postVotes": 0,
+      "postVotes": 1,
       "topic": "post",
       "desc": "post",
       "user": 1,
@@ -38,7 +38,7 @@
     },
     {
       "title": "Hello ",
-      "postVotes": 0,
+      "postVotes": 2,
       "topic": "Test post for luigi",
       "desc": "i really hope that this works",
       "user": 2,
@@ -87,32 +87,11 @@
       "id": 7
     },
     {
-      "content": "test coomment",
-      "postId": 1,
-      "commentVotes": 0,
-      "user": 1,
-      "id": 8
-    },
-    {
       "content": "hola",
       "postId": 2,
       "commentVotes": 0,
       "user": 1,
       "id": 9
-    },
-    {
-      "content": "hello",
-      "postId": 1,
-      "commentVotes": 0,
-      "user": 1,
-      "id": 10
-    },
-    {
-      "content": "hello",
-      "postId": 1,
-      "commentVotes": 0,
-      "user": 1,
-      "id": 11
     },
     {
       "content": "NICE MOVES!",

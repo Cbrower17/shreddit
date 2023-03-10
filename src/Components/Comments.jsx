@@ -1,8 +1,8 @@
 import Comment from "./comment";
 
-export default function Comments({ post }) {
+export default function Comments({ post, deleteComment}) {
   const allComments = post.comments.map((comment) => {
-    return <Comment key={comment.id} comment={comment} />;
+    return <Comment key={comment.id} comment={comment} deleteComment={deleteComment} />;
   });
 
   return (
@@ -11,9 +11,9 @@ export default function Comments({ post }) {
       <thead>
       <tr>
         <th>User</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
+        <th>Comment</th>
+        <th>Remove</th>
+        <th>Votes</th>
       </tr>
     </thead>
         <tbody>{allComments}</tbody>
