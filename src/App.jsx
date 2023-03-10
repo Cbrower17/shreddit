@@ -15,7 +15,8 @@ function App() {
   const [allUsers, setAllUsers] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
   const [search, setSearch] = useState("");
-  const [filter,setFilter] = useState("all")
+  const [filter,setFilter] = useState("all");
+  const [sort,setSort] = useState("old");
 
   /*current idea,
   pass down setcurrentuser to the drop down for selction
@@ -112,10 +113,17 @@ function App() {
     );}
   });
   console.log(shownPosts);
+if(sort === "new"){
+  shownPosts.sort((a,b) => b.id - a.id);
+}else if(sort === "old"){
+  shownPosts.sort((a,b) => a.id - b.id);
+}else if(sort === "hot"){
+  shownPosts.sort((a,b) => b.postVotes - a.postVotes);
+}
+
 
   return (
     <div className="App">
-      <h1>currentUser: {currentUser.name}</h1>
       <Navbar
         onChangePage={setPage}
         allUsers={allUsers}
@@ -129,6 +137,7 @@ function App() {
           path="/feed"
           element={
             <Feed
+            setSort={setSort}
               allPosts={allPosts}
               posts={shownPosts}
               handleNewComment={handleNewComment}
@@ -153,6 +162,7 @@ function App() {
           path="/"
           element={
             <Allpost
+            setSort={setSort}
               allPosts={allPosts}
               posts={shownPosts}
               handleNewComment={handleNewComment}

@@ -1,12 +1,12 @@
 export default function Account({ currentUser }) {
   return (
-    <div className="flex flex-col items-center justify-center space-y-5">
-    <div className="card lg:card-side bg-base-100 shadow-xl w-150">
-      <figure>
+    <div className="flex flex-col items-center justify-center p-3 space-y-5">
+    <div className="card card-side bg-base-100 border-2">
+      <figure className="border-r-2">
         <img
         src={currentUser.propic}
           alt="Album"
-          className="w-96"
+          className="w-96 "
         />
       </figure>
       <div className="card-body">

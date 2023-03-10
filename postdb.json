@@ -53,6 +53,15 @@
       "user": 4,
       "image": "https://media.tenor.com/6QRLKh0iM1wAAAAC/spoons-salad-fingers.gif",
       "id": 6
+    },
+    {
+      "title": "Test Post ",
+      "postVotes": 0,
+      "topic": "pets",
+      "desc": "Need something different",
+      "user": 1,
+      "image": "https://www.treehugger.com/thmb/Ocxi8FYaubDwjOwria6FNpGjJjo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-953005498-4ca60c6c2c5f4b0e881b2746ad5f17ef.jpg",
+      "id": 7
     }
   ],
   "comments": [
@@ -106,13 +115,6 @@
       "id": 11
     },
     {
-      "content": "N",
-      "postId": 5,
-      "commentVotes": 0,
-      "user": "Mario",
-      "id": 12
-    },
-    {
       "content": "NICE MOVES!",
       "postId": 5,
       "commentVotes": 0,
@@ -139,6 +141,13 @@
       "commentVotes": 0,
       "user": "Greg",
       "id": 16
+    },
+    {
+      "content": "Crushing it, Luigi!",
+      "postId": 5,
+      "commentVotes": 0,
+      "user": "Salad Fingers",
+      "id": 17
     }
   ],
   "users": [

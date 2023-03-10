@@ -1,7 +1,8 @@
 import Post from "./Post";
 import FilterBox from "./FilterBox";
+import SortBox from "./SortBox";
 
-export default function Container({allPosts, posts, handleNewComment,users,setFilter }) {
+export default function Container({allPosts, posts, handleNewComment,users,setFilter, setSort }) {
   const shownPosts = posts.map((post) => {
     return (
       <Post handleNewComment={handleNewComment} key={post.id} post={post} users={users} />
@@ -9,11 +10,9 @@ export default function Container({allPosts, posts, handleNewComment,users,setFi
   });
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-5">
+    <div className="flex flex-col items-center justify-center space-y-5 p-3 ">
       <h1>
-        Im a container
-        <br />
-        add sorting options up here
+        <SortBox setSort={setSort}/>
         <FilterBox allPosts ={allPosts} setFilter={setFilter}/>
       </h1>
       {shownPosts}

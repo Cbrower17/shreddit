@@ -24,7 +24,7 @@ export default function Newpost({handlePost,currentUser}){
         navigate("/")
       }
     return (
-      <div className="flex flex-col items-center justify-center space-y-5">
+      <div className="flex flex-col items-center justify-center space-y-5 p-3 ">
         <div className="card w-96 bg-base-100 shadow-xl">
   <div className="card-body">
     <h2 className="card-title">New Post</h2>
